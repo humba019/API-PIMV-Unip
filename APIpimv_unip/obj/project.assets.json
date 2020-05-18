@@ -8825,21 +8825,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\humbe\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\humbe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\humbe\\Source\\Repos\\APIpimv_unip\\APIpimv_unip\\APIpimv_unip.csproj",
+      "projectUniqueName": "C:\\Users\\humbe\\Documents\\Development\\API-PIMV-Unip\\APIpimv_unip\\APIpimv_unip.csproj",
       "projectName": "APIpimv_unip",
-      "projectPath": "C:\\Users\\humbe\\Source\\Repos\\APIpimv_unip\\APIpimv_unip\\APIpimv_unip.csproj",
+      "projectPath": "C:\\Users\\humbe\\Documents\\Development\\API-PIMV-Unip\\APIpimv_unip\\APIpimv_unip.csproj",
       "packagesPath": "C:\\Users\\humbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\humbe\\Source\\Repos\\APIpimv_unip\\APIpimv_unip\\obj\\",
+      "outputPath": "C:\\Users\\humbe\\Documents\\Development\\API-PIMV-Unip\\APIpimv_unip\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\humbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -8918,7 +8914,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
