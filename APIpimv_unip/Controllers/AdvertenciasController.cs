@@ -36,18 +36,18 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveAdvertenciaResource resource)
+        public async Task<ActionResult<AdvertenciaResource>> PostAsync([FromBody] SaveAdvertenciaResource resource)
         {
             if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState.GetErrorMessages());
+            }
 
             var advertencia = _mapper.Map<SaveAdvertenciaResource, Advertencia>(resource);
             var result = await _advertenciaService.SaveAsync(advertencia);
 
-            if (!result.Success)
-                return BadRequest(result.Message);
-
             var advertenciaResource = _mapper.Map<Advertencia, AdvertenciaResource>(result.Advertencia);
+
             return Ok(advertenciaResource);
 
         }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace APIpimv_unip_test
 {
-    public class AutomapperSingletonModelToResource
+    public class AutomapperSingleton
     {
         private static IMapper _mapper;
         public static IMapper Mapper
@@ -19,6 +19,7 @@ namespace APIpimv_unip_test
                     var mappingConfig = new MapperConfiguration(mc =>
                     {
                         mc.AddProfile(new ModelToResourceProfile());
+                        mc.AddProfile(new ResourceToModelProfile());
                     });
                     IMapper mapper = mappingConfig.CreateMapper();
                     _mapper = mapper;

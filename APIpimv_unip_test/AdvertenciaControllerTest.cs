@@ -26,7 +26,7 @@ namespace APIpimv_unip_test
             var mockServ = new Mock<IAdvertenciaService>();
             mockServ.Setup(repo => repo.ListAsync()).ReturnsAsync(GetList());
 
-            AdvertenciasController controller = new AdvertenciasController(mockServ.Object, AutomapperSingletonModelToResource.Mapper);
+            AdvertenciasController controller = new AdvertenciasController(mockServ.Object, AutomapperSingleton.Mapper);
 
             // Act
             var result = await controller.GetAllAsync();
@@ -43,32 +43,31 @@ namespace APIpimv_unip_test
             string descricao = "GRAVE";
             int nivel = 3;
 
-            SaveAdvertenciaResource advertencia = new SaveAdvertenciaResource()
+            Advertencia advertencia = new Advertencia()
             {
+                Id = id,
                 Descricao = descricao,
                 Nivel = nivel
             };
+            SaveAdvertenciaResource saveAdvertencia = new SaveAdvertenciaResource()
+            {
+                Descricao = advertencia.Descricao,
+                Nivel = advertencia.Nivel
+            };
 
             var mockServ = new Mock<IAdvertenciaService>();
-            mockServ.Setup(repo => repo.SaveAsync(new Advertencia()
-            {
-                Id = id,
-                Descricao = advertencia.Descricao,
-                Nivel = advertencia.Nivel
-            })).ReturnsAsync(new AdvertenciaResponse(new Advertencia()
-            {
-                Id = id,
-                Descricao = advertencia.Descricao,
-                Nivel = advertencia.Nivel
-            }));
+            mockServ.Setup(repo => repo.SaveAsync(It.IsAny<Advertencia>()))
+                                                            .Returns(Task.FromResult(new AdvertenciaResponse(It.IsAny<Advertencia>())))
+                                                            .Verifiable();
 
-            AdvertenciasController controller = new AdvertenciasController(mockServ.Object, AutomapperSingletonResourceToModel.Mapper);
+            AdvertenciasController controller = new AdvertenciasController(mockServ.Object, AutomapperSingleton.Mapper);
 
             // Act
-            var result = await controller.PostAsync(advertencia);
+            var result = await controller.PostAsync(saveAdvertencia);
 
             // Assert
-            Assert.IsType<BadRequestObjectResult>(result);
+            var actionResult = Assert.IsType<ActionResult<AdvertenciaResource>>(result);
+            Assert.IsType<OkObjectResult>(actionResult.Result);
         }
   
 
