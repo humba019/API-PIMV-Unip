@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JPESef56LP2xO3KOrOYWlS9ZpzTsAf2ju+xQxEe2PM0elOB8bX8mKAwrZONH3buJVxeGEkGDJSmU+1982iuSng==",
+  "dgSpecHash": "xO2rDKkT5piDKXdZxGTm23W4rBIZkjm4N0+YipTZVhCG5vwN4Ia/ObBJWqFt4o5KhKFQa6XGFhNPvzBz4EzVxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\humbe\\Documents\\Development\\API-PIMV-Unip\\APIpimv_unip\\APIpimv_unip.csproj",
   "expectedPackageFiles": [
@@ -52,6 +52,7 @@
     "C:\\Users\\humbe\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\humbe\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\humbe\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\humbe\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512",
     "C:\\Users\\humbe\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.1.1\\microsoft.visualstudio.web.codegeneration.3.1.1.nupkg.sha512",
     "C:\\Users\\humbe\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\3.1.1\\microsoft.visualstudio.web.codegeneration.contracts.3.1.1.nupkg.sha512",
     "C:\\Users\\humbe\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\3.1.1\\microsoft.visualstudio.web.codegeneration.core.3.1.1.nupkg.sha512",

@@ -295,8 +295,6 @@ C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\bin\Debug\netcor
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.csprojAssemblyReference.cache
-C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.csproj.CoreCompileInputs.cache
-C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.AssemblyInfoInputs.cache
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.AssemblyInfo.cs
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.RazorTargetAssemblyInfo.cache
