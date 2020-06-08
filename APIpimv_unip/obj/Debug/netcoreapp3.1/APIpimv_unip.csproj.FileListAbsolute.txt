@@ -304,3 +304,5 @@ C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcor
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.dll
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.pdb
 C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.genruntimeconfig.cache
+C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.csproj.CoreCompileInputs.cache
+C:\Users\humbe\Documents\Development\API-PIMV-Unip\APIpimv_unip\obj\Debug\netcoreapp3.1\APIpimv_unip.MvcApplicationPartsAssemblyInfo.cache

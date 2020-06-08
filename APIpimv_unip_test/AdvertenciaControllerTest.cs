@@ -35,20 +35,13 @@ namespace APIpimv_unip_test
             Assert.IsType<List<AdvertenciaResource>>(result);
             Assert.Equal(2, result.Count());
         }
+
         [Fact]
-        public async Task SaveAsync_Advertencia_SizeAndTypeReturned()
+        public async Task SaveAsync_Advertencia_OkObjectResultReturned()
         {
             // Arrange
-            int id = 3;
-            string descricao = "GRAVE";
-            int nivel = 3;
+            Advertencia advertencia = GetObject();
 
-            Advertencia advertencia = new Advertencia()
-            {
-                Id = id,
-                Descricao = descricao,
-                Nivel = nivel
-            };
             SaveAdvertenciaResource saveAdvertencia = new SaveAdvertenciaResource()
             {
                 Descricao = advertencia.Descricao,
@@ -68,8 +61,66 @@ namespace APIpimv_unip_test
             // Assert
             var actionResult = Assert.IsType<ActionResult<AdvertenciaResource>>(result);
             Assert.IsType<OkObjectResult>(actionResult.Result);
+
         }
-  
+
+        [Fact]
+        public async Task UpdateAsync_Advertencia_OkObjectResultReturned()
+        {
+            // Arrange
+            Advertencia advertencia = GetObject();
+
+            SaveAdvertenciaResource saveAdvertencia = new SaveAdvertenciaResource()
+            {
+                Descricao = "LEVÍSSIMA",
+                Nivel = 0
+            };
+
+            var mockServ = new Mock<IAdvertenciaService>();
+            mockServ.Setup(repo => repo.UpdateAsync(advertencia.Id, It.IsAny<Advertencia>()))
+                                                            .Returns(Task.FromResult(new AdvertenciaResponse(It.IsAny<Advertencia>())))
+                                                            .Verifiable();
+
+            AdvertenciasController controller = new AdvertenciasController(mockServ.Object, AutomapperSingleton.Mapper);
+
+            // Act
+            var result = await controller.PutAsync(advertencia.Id, saveAdvertencia);
+
+            // Assert
+            var actionResult = Assert.IsType<ActionResult<AdvertenciaResource>>(result);
+            Assert.IsType<OkObjectResult>(actionResult.Result);
+
+        }
+
+        [Fact]
+        public async Task DeleteAsync_Advertencia_OkObjectResultReturned()
+        {
+            // Arrange
+            Advertencia advertencia = GetObject();
+
+            SaveAdvertenciaResource saveAdvertencia = new SaveAdvertenciaResource()
+            {
+                Descricao = advertencia.Descricao,
+                Nivel = advertencia.Nivel
+            };
+
+
+            var mockServ = new Mock<IAdvertenciaService>();
+            mockServ.Setup(repo => repo.DeleteAsync(advertencia.Id))
+                                                            .Returns(Task.FromResult(new AdvertenciaResponse(It.IsAny<Advertencia>())))
+                                                            .Verifiable();
+
+            AdvertenciasController controller = new AdvertenciasController(mockServ.Object, AutomapperSingleton.Mapper);
+
+            // Act
+            var result = await controller.DeleteAsync(advertencia.Id);
+
+            // Assert
+            var actionResult = Assert.IsType<ActionResult<AdvertenciaResource>>(result);
+            Assert.IsType<OkObjectResult>(actionResult.Result);
+
+        }
+
 
         private IEnumerable<Advertencia> GetList() {
 
@@ -88,6 +139,18 @@ namespace APIpimv_unip_test
                             Nivel = 2
                         }
                     };
+        }
+
+        private Advertencia GetObject()
+        {
+            List<Advertencia> advs = GetList().ToList();
+
+            return new Advertencia() 
+            { 
+                Id = advs[0].Id, 
+                Descricao = advs[0].Descricao, 
+                Nivel = advs[0].Nivel 
+            };
         }
 
     }

@@ -37,7 +37,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveUsuarioResource resource)
+        public async Task<ActionResult<UsuarioResource>> PostAsync([FromBody] SaveUsuarioResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -56,7 +56,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{login}")]
-        public async Task<IActionResult> PutAsync(string login, [FromBody] SaveUsuarioResource resource)
+        public async Task<ActionResult<UsuarioResource>> PutAsync(string login, [FromBody] SaveUsuarioResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -74,7 +74,7 @@ namespace APIpimv_unip.Controllers
 
         // DELETE: unip/pim5/usuario/5
         [HttpDelete("{login}")]
-        public async Task<IActionResult> DeleteAsync(string login)
+        public async Task<ActionResult<UsuarioResource>> DeleteAsync(string login)
         {
             var result = await _usuarioService.DeleteAsync(login);
             if (!result.Success)

@@ -37,7 +37,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveDisciplinaResource resource)
+        public async Task<ActionResult<DisciplinaResource>> PostAsync([FromBody] SaveDisciplinaResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -56,7 +56,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveDisciplinaResource resource)
+        public async Task<ActionResult<DisciplinaResource>> PutAsync(int id, [FromBody] SaveDisciplinaResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -74,7 +74,7 @@ namespace APIpimv_unip.Controllers
 
         // DELETE: unip/pim5/disciplina/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<ActionResult<DisciplinaResource>> DeleteAsync(int id)
         {
             var result = await _disciplinaService.DeleteAsync(id);
             if (!result.Success)

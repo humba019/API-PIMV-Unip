@@ -12,8 +12,6 @@ namespace APIpimv_unip.Resources
         [MaxLength(100)]
         public string Descricao { get; set; }
         [Required]
-        public int Andar { get; set; }
-        [Required]
         public int IdDisciplina { get; set; }
         [Required]
         public string CargaHora { get; set; }

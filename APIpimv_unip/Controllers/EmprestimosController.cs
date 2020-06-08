@@ -38,7 +38,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveEmprestimoResource resource)
+        public async Task<ActionResult<EmprestimoResource>> PostAsync([FromBody] SaveEmprestimoResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -57,7 +57,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveEmprestimoResource resource)
+        public async Task<ActionResult<EmprestimoResource>> PutAsync(int id, [FromBody] SaveEmprestimoResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -75,7 +75,7 @@ namespace APIpimv_unip.Controllers
 
         // DELETE: unip/pim5/emprestimo/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<ActionResult<EmprestimoResource>> DeleteAsync(int id)
         {
             var result = await _emprestimoService.DeleteAsync(id);
             if (!result.Success)

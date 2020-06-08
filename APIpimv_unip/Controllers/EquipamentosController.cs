@@ -23,34 +23,17 @@ namespace APIpimv_unip.Controllers
 
         // GET: unip/pim5/equipamento
         [HttpGet]
-        public async Task<IEnumerable<EquipamentoResource>> ListAsync()
+        public async Task<IEnumerable<EquipamentoResource>> GetAllAsync()
         {
             var equipamentos = await _equipamentoService.ListAsync();
             var resources = _mapper.Map<IEnumerable<Equipamento>, IEnumerable<EquipamentoResource>>(equipamentos);
 
             return resources;
         }
-        /*
-        // GET: unip/pim5/equipamento/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<equipamento>> Getequipamento(long id)
-        {
-            var equipamento = await _context.equipamentos.FindAsync(id);
-
-            if (equipamento == null)
-            {
-                return NotFound();
-            }
-
-            return equipamento;
-        }
-        */
 
         // PUT: unip/pim5/equipamento/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveEquipamentoResource resource)
+        public async Task<ActionResult<EquipamentoResource>> PutAsync(int id, [FromBody] SaveEquipamentoResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -67,10 +50,8 @@ namespace APIpimv_unip.Controllers
         }
 
         // POST: unip/pim5/equipamento
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] SaveEquipamentoResource resource)
+        public async Task<ActionResult<EquipamentoResource>> PostAsync([FromBody] SaveEquipamentoResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -88,7 +69,7 @@ namespace APIpimv_unip.Controllers
 
         // DELETE: unip/pim5/equipamento/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<ActionResult<EquipamentoResource>> DeleteAsync(int id)
         {
             var result = await _equipamentoService.DeleteAsync(id);
             if (!result.Success)

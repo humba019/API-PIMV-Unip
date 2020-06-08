@@ -55,7 +55,7 @@ namespace APIpimv_unip.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromBody] SaveAdvertenciaResource resource)
+        public async Task<ActionResult<AdvertenciaResource>> PutAsync(int id, [FromBody] SaveAdvertenciaResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
@@ -73,7 +73,7 @@ namespace APIpimv_unip.Controllers
 
         // DELETE: unip/pim5/advertencia/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<ActionResult<AdvertenciaResource>> DeleteAsync(int id)
         {
             var result = await _advertenciaService.DeleteAsync(id);
             if (!result.Success)
